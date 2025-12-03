@@ -104,8 +104,8 @@ def ask_astronomy_question(question):
         messages = [
             {
                 'role': 'user',
-                'content': 'Beantworte die Frage: ' + question +
-                " mit möglichst diesen Fakten: " + summary,
+                'content': 'Beantworte die Frage am Ende in deutsch mit Hilfe der folgenden Informationen. ' + summary +
+                " Frage: " + question,
             },
         ]
         print("Question: {0}".format(messages[0]['content']))
