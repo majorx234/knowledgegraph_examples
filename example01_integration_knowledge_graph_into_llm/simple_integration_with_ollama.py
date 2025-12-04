@@ -84,7 +84,6 @@ def extract_object_name(question):
     return match.group(0) if match else None
 
 
-
 def ask_astronomy_question(question):
     """
     enhance question with facts out of the knowledge graph
@@ -108,11 +107,8 @@ def ask_astronomy_question(question):
                 " Frage: " + question,
             },
         ]
-        print("Question: {0}".format(messages[0]['content']))
-        print("to: {0} on {1}".format(ollama_vars['model'], ollama_vars['host']))
-        # use q/a-pipeline: question + context (summary)
         result = client.chat(model=ollama_vars['model'], messages=messages)
-        return result
+        return result['message']['content']
     else:
         return "Ich habe keine Informationen zu diesem Himmelsobjekt."
 
